@@ -1,0 +1,32 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: puppet_apply
+  require_chef_for_busser: false
+  puppet_debug: false
+  puppet_verbose: false
+  manifests_path: tests/manifests
+  manifest: site.pp
+  hiera_config_path: tests/hiera.yaml
+  hiera_data_path: tests/hieradata
+  modules_path: modules
+
+platforms:
+  - name: puppetlabs/centos-6.6-64-nocm
+#  - name: puppetlabs/centos-7.2-64-nocm
+#    driver:
+#      network:
+#        - ["forwarded_port", {guest: 8983, host: 8983}]
+
+suites:
+  - name: newrelic
+    verifier:
+      gemfile: Gemfile
+      patterns:
+      - spec/acceptance/base_spec.rb
+
+verifier:
+  ruby_bindir: '/usr/bin'
+  name: serverspec

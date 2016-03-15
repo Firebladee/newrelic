@@ -1,0 +1,8 @@
+---
+:backends:
+  - yaml
+:yaml:
+  :datadir: /tmp/kitchen/hiera
+:hierarchy:
+  - hosts/%{::hostname}
+  - common

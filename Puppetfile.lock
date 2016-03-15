@@ -1,0 +1,19 @@
+FORGE
+  remote: https://forgeapi.puppetlabs.com
+  specs:
+    puppetlabs-ntp (4.1.2)
+      puppetlabs-stdlib (< 5.0.0, >= 4.6.0)
+    puppetlabs-stdlib (4.11.0)
+
+GIT
+  remote: git@gitlab.et-scm.com:tio/rap-puppet-yumrepo.git
+  ref: master
+  sha: 199d426932bff5a3aae55d10d52b472e3dda0b9a
+  specs:
+    gbrown-yumrepos (0.0.1)
+
+DEPENDENCIES
+  gbrown-yumrepos (>= 0)
+  puppetlabs-ntp (>= 0)
+  puppetlabs-stdlib (>= 1.0.0)
+

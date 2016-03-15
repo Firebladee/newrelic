@@ -42,7 +42,11 @@
 #
 # Copyright 2016 Your name here, unless otherwise noted.
 #
-class newrelic {
+class newrelic (
+  $type,
+){
+  validate_hash($type)
 
-
+  notify{"type = ${type}":}
+  create_resources(newrelic::monitor, $type)
 }
