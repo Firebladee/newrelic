@@ -9,6 +9,7 @@ define newrelic::monitor::php (
 
   package { $package_name:
     ensure => $ensure,
+    require => Yumrepo['newrelic'],
   }
 
   file { '/usr/bin/newrelic-install':

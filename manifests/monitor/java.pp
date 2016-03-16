@@ -23,6 +23,7 @@ define newrelic::monitor::java (
     path   => "${app_root}/newrelic/newrelic.yml",
     line   => "  license_key: '<%= ${key} %>'",
     match  => "^  license_key: '<%= license_key %>'",
+    require => Download_uncompress["newrelic_${type}${version}.zip"],
   }
 
   file_line { 'app_name':
@@ -31,5 +32,6 @@ define newrelic::monitor::java (
     line   => "  app_name: ${app_name}",
     match  => '  app_name:',
     multiple => true,
+    require => Download_uncompress["newrelic_${type}${version}.zip"],
   }
 }
