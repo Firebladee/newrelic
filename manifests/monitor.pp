@@ -2,9 +2,6 @@ define newrelic::monitor (
   $ensure,
   $key = undef,
 ){
-  notify{"name = ${name}":}
-  notify{"monitor_${name} = ${ensure}":}
-
   case $name {
     os: {
       newrelic::monitor::os { $name:

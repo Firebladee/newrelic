@@ -47,6 +47,5 @@ class newrelic (
 ){
   validate_hash($type)
 
-  notify{"type = ${type}":}
   create_resources(newrelic::monitor, $type)
 }
