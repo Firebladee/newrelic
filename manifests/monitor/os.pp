@@ -8,7 +8,8 @@ define newrelic::monitor::os (
   }
 
   package { $package_name:
-    ensure => $ensure,
+    ensure  => $ensure,
+    require => Yumrepo['newrelic'],
   }
 
   file { '/etc/newrelic/nrsysmond.cfg':
@@ -17,6 +18,7 @@ define newrelic::monitor::os (
     owner   => 'root',
     group   => 'newrelic',
     content => template('newrelic/nrsysmond.cfg.erb'),
+    require => Package[$package_name],
   }
 
   service { 'newrelic-sysmond':
