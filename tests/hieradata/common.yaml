@@ -20,3 +20,10 @@ newrelic::type:
     key: '8fb13cf1873e95f60045afe67fc3a6aba9e563da'
   'php':
     ensure: true
+    key: '8fb13cf1873e95f60045afe67fc3a6aba9e563da'
+  'java':
+    ensure: true
+    key: '8fb13cf1873e95f60045afe67fc3a6aba9e563da'
+    app_root: '/tmp'
+    version: '2.10.0'
+    app_name: 'fred'

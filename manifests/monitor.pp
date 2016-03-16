@@ -1,6 +1,12 @@
 define newrelic::monitor (
   $ensure,
-  $key = undef,
+
+  $key      = undef,
+  $version  = undef,
+  $app_root = undef,
+  $source   = undef,
+  $type     = undef,
+  $app_name = undef,
 ){
   case $name {
     os: {
@@ -9,8 +15,19 @@ define newrelic::monitor (
         key    => $key,
     }}
     php: {
-      newrelic::monitor::php {
-        $name: ensure => $ensure,
+      newrelic::monitor::php { $name:
+        ensure => $ensure,
+        key    => $key,
+    }}
+    java: {
+      newrelic::monitor::java { $name:
+        ensure   => $ensure,
+        key      => $key,
+        version  => $version,
+        app_root => $app_root,
+        source   => $source,
+        type     => $type,
+        app_name => $app_name,
     }}
     default: { notify{"Should not get here":}}
   }
