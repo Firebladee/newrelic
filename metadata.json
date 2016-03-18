@@ -2,14 +2,25 @@
   "name": "puppet-newrelic",
   "version": "0.1.0",
   "author": "puppet",
-  "summary": null,
+  "summary": "Installs newrelic",
   "license": "Apache-2.0",
   "source": "",
   "project_page": null,
   "issues_url": null,
   "dependencies": [
-    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"},
+    {"name":"puppetlabs-nodejs","version_requirement":">= 1.3.1"},
+    {"name":"treydock-gpg_key","version_requirement":">= 0.0.3"}
   ],
   "data_provider": null
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "CentOS",
+      "operatingsystemrelease": [
+        "6",
+        "7",
+      ]
+    }
+  ]
 }
 
