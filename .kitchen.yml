@@ -15,7 +15,7 @@ provisioner:
 
 platforms:
   - name: puppetlabs/centos-6.6-64-nocm
-#  - name: puppetlabs/centos-7.2-64-nocm
+  - name: puppetlabs/centos-7.2-64-nocm
 #    driver:
 #      network:
 #        - ["forwarded_port", {guest: 8983, host: 8983}]

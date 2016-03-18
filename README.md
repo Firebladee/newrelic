@@ -14,18 +14,11 @@
 
 ## Description
 
-Start with a one- or two-sentence summary of what the module does and/or what
-problem it solves. This is your 30-second elevator pitch for your module.
-Consider including OS/Puppet version it works with.
-
-You can give more descriptive information in a second paragraph. This paragraph
-should answer the questions: "What does this module *do*?" and "Why would I use
-it?" If your module has a range of functionality (installation, configuration,
-management, etc.), this is the time to mention it.
+This module is to add the newrelic agent's to your machine/application.
 
 ## Setup
 
-### What newrelic affects **OPTIONAL**
+### What newrelic affects
 
 If it's obvious what your module touches, you can skip this section. For
 example, folks can probably figure out that your mysql_instance module affects
@@ -38,7 +31,7 @@ If there's more that they should know about, though, this is the place to mentio
 * Dependencies that your module automatically installs.
 * Warnings or other important notices.
 
-### Setup Requirements **OPTIONAL**
+### Setup Requirements
 
 If your module requires anything extra before setting up (pluginsync enabled,
 etc.), mention it here.
@@ -55,9 +48,24 @@ basic use of the module.
 
 ## Usage
 
-This section is where you describe how to customize, configure, and do the
-fancy stuff with your module here. It's especially helpful if you include usage
-examples and code samples for doing things with your module.
+Using this module is nice and simple, create a hash and pass that to the module.
+For hiera
+```puppet
+newrelic::type:
+  'os':
+    key: 'insert key'
+  'php': 
+    key: 'insert key'
+  'java':
+    key: 'insert key'
+    app_root: '/tmp'
+    version: '2.10.0'
+    app_name: 'fred'
+  'nodejs':
+    key: 'insert key'
+    app_root: '/tmp'
+    app_name: 'fred'
+```
 
 ## Reference
 
