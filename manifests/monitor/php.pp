@@ -22,6 +22,7 @@ define newrelic::monitor::php (
 
   exec { '/usr/bin/newrelic-install install':
 #    path    => '/usr/bin',
+    creates => '/usr/bin/newrelic-install',
     require => Package[$package_name],      
 
   }

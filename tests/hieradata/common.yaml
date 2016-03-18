@@ -3,6 +3,12 @@ classes:
   - ntp
   - yumrepos
   - newrelic
+#  - rvm
+  - nodejs
+
+rvm::system_rubies:
+  'ruby-1.9':
+    default_use: true
 
 ntp::servers:
   - '0.pool.ntp.org'
@@ -16,14 +22,15 @@ yumrepos::repos:
 
 newrelic::type:
   'os':
-    ensure: true
     key: '8fb13cf1873e95f60045afe67fc3a6aba9e563da'
   'php':
-    ensure: true
     key: '8fb13cf1873e95f60045afe67fc3a6aba9e563da'
   'java':
-    ensure: true
     key: '8fb13cf1873e95f60045afe67fc3a6aba9e563da'
     app_root: '/tmp'
     version: '2.10.0'
+    app_name: 'fred'
+  'nodejs':
+    key: '8fb13cf1873e95f60045afe67fc3a6aba9e563da'
+    app_root: '/tmp'
     app_name: 'fred'

@@ -12,7 +12,6 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     builder (3.2.2)
-    diff-lcs (1.2.5)
     facter (2.4.6)
       CFPropertyList (~> 2.2.6)
     faraday (0.9.2)
@@ -22,7 +21,7 @@ GEM
       activesupport (>= 3.0.0)
       faraday (~> 0.8)
       multi_json (~> 1.7)
-    hiera (3.0.6)
+    hiera (3.1.0)
       json_pure
     i18n (0.7.0)
     json (1.8.3)
@@ -32,74 +31,29 @@ GEM
       test-kitchen (~> 1.4)
     kitchen-vagrant (0.19.0)
       test-kitchen (~> 1.4)
-    kitchen-verifier-serverspec (0.3.0)
-      net-ssh (~> 2.0)
-      test-kitchen (~> 1.4)
     librarian-puppet (2.2.1)
       librarianp (>= 0.6.3)
       puppet_forge (~> 1.0)
       rsync
     librarianp (0.6.3)
       thor (~> 0.15)
-    metaclass (0.0.4)
     minitest (5.8.4)
     mixlib-install (0.7.1)
     mixlib-shellout (2.2.6)
-    mocha (1.1.0)
-      metaclass (~> 0.0.1)
     multi_json (1.11.2)
     multipart-post (2.0.0)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.4)
-    net-telnet (0.1.1)
-    puppet (4.3.2)
+    puppet (4.4.0)
+      CFPropertyList (~> 2.2.6)
       facter (> 2.0, < 4)
       hiera (>= 2.0, < 4)
       json_pure
-    puppet-lint (1.1.0)
-    puppet-syntax (2.1.0)
-      rake
     puppet_forge (1.0.5)
       her (~> 0.6.8)
-    puppetlabs_spec_helper (1.1.1)
-      mocha
-      puppet-lint
-      puppet-syntax
-      rake
-      rspec-puppet
-    rake (11.1.1)
-    rspec (3.4.0)
-      rspec-core (~> 3.4.0)
-      rspec-expectations (~> 3.4.0)
-      rspec-mocks (~> 3.4.0)
-    rspec-core (3.4.4)
-      rspec-support (~> 3.4.0)
-    rspec-expectations (3.4.0)
-      diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.4.0)
-    rspec-its (1.2.0)
-      rspec-core (>= 3.0.0)
-      rspec-expectations (>= 3.0.0)
-    rspec-mocks (3.4.1)
-      diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.4.0)
-    rspec-puppet (2.3.2)
-      rspec
-    rspec-support (3.4.1)
     rsync (1.0.9)
     safe_yaml (1.0.4)
-    serverspec (2.31.0)
-      multi_json
-      rspec (~> 3.0)
-      rspec-its
-      specinfra (~> 2.53)
-    sfl (2.2)
-    specinfra (2.53.1)
-      net-scp
-      net-ssh (>= 2.7, < 3.1)
-      net-telnet
-      sfl
     test-kitchen (1.6.0)
       mixlib-install (~> 0.7)
       mixlib-shellout (>= 1.2, < 3.0)
@@ -116,15 +70,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  facter (>= 1.7.0)
   kitchen-puppet
   kitchen-vagrant
-  kitchen-verifier-serverspec
   librarian-puppet
-  puppet (>= 3.3)
-  puppet-lint (>= 1.0.0)
-  puppetlabs_spec_helper (>= 0.8.2)
-  serverspec
+  puppet
   test-kitchen
 
 BUNDLED WITH
