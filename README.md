@@ -15,6 +15,11 @@
 ## Description
 
 This module is to add the newrelic agent's to your machine/application.
+What can this modulle setup.
+* os
+* node.js
+* php
+* java
 
 ## Setup
 
@@ -67,7 +72,38 @@ newrelic::type:
     app_name: 'fred'
 ```
 
-## Reference
+### Parameters
+
+#### `ensure`
+
+This is used to install or remove the agent.  Default is `present`.
+
+#### `key`
+
+This is the key for your newrelic account.  If left blank then the agent will
+be setup but nothing will be sent to the newrelic web site.
+
+#### `version`
+
+Used to specify the version of java plugin you want.  Defaults to `undef`.
+This will cause the module to fail.
+
+#### `app_root`
+
+This is the root of the application that is going to be monitored by Newrelic.
+Default is `undef`.
+
+#### `source`
+
+Source of the java agent.  Default is `http://yum.newrelic.com/newrelic/java-agent/`.
+
+#### `type`
+
+The type of java agent.  Default is `agent`.
+
+#### `app_name`
+
+This is used by node.js to identify the application.  Default is `undef`.
 
 Here, include a complete list of your module's classes, types, providers,
 facts, along with the parameters for each. Users refer to this section (thus
