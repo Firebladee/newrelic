@@ -2,3 +2,4 @@
 .librarian/
 .tmp/
 .*.swp
+spec/fixtures
