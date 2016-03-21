@@ -5,7 +5,7 @@ define newrelic::monitor::nodejs (
   $app_name   = $app_name,
 ){
   package { 'newrelic':
-    ensure   => 'present',
+    ensure   => $ensure,
     provider => 'npm',
     require  => Package['nodejs'],
   }
@@ -18,7 +18,7 @@ define newrelic::monitor::nodejs (
   }
 
   file_line { "${app_root}_key":
-    ensure  => present,
+    ensure  => $ensure,
     path    => "${app_root}/newrelic.js",
     line    => "  license_key: '<%= ${key} %>'",
     match   => '^  license_key:',
@@ -26,7 +26,7 @@ define newrelic::monitor::nodejs (
   }
 
   file_line { "${app_root}_app_name":
-    ensure  => present,
+    ensure  => $ensure,
     path    => "${app_root}/newrelic.js",
     line    => "  app_name: ['${app_name}']",
     match   => '  app_name:',
