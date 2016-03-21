@@ -30,11 +30,11 @@ define newrelic::monitor (
     }}
     nodejs: {
       newrelic::monitor::nodejs { $name:
-        ensure     => $ensure,
-        key        => $key,
-        app_root   => $app_root,
-        app_name   => $app_name,
+        ensure   => $ensure,
+        key      => $key,
+        app_root => $app_root,
+        app_name => $app_name,
     }}
-    default: { notify{"Should not get here":}}
+    default: { notify{'Should not get here':}}
   }
 }

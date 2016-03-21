@@ -2,18 +2,18 @@ define newrelic::monitor::php (
   $ensure = $ensure,
   $key    = $key,
 ){
-  case $osfamily {
+  case $::osfamily {
     'RedHat', 'Debian': { $package_name = 'newrelic-php5'}
-    default: { notify{"os $osfamily not yet supported":}}
+    default: { notify{"os ${::osfamily} not yet supported":}}
   }
 
   package { $package_name:
-    ensure => $ensure,
+    ensure  => $ensure,
     require => Yumrepo['newrelic'],
   }
 
   file { '/usr/bin/newrelic-install':
-  #  ensure  => $ensure,
+    ensure  => $ensure,
     owner   => 'root',
     group   => 'root',
     mode    => '0755',
@@ -21,9 +21,8 @@ define newrelic::monitor::php (
   }
 
   exec { '/usr/bin/newrelic-install install':
-#    path    => '/usr/bin',
     creates => '/usr/bin/newrelic-install',
-    require => Package[$package_name],      
+    require => Package[$package_name],
 
   }
 }

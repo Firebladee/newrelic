@@ -2,9 +2,9 @@ define newrelic::monitor::os (
   $ensure = $ensure,
   $key    = $key,
 ){
-  case $osfamily {
+  case $::osfamily {
     'RedHat', 'Debian': { $package_name = 'newrelic-sysmond'}
-    default: { notify{"os $osfamily not yet supported":}}
+    default: { notify{"os ${::osfamily} not yet supported":}}
   }
 
   package { $package_name:

@@ -12,6 +12,7 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     builder (3.2.2)
+    diff-lcs (1.2.5)
     facter (2.4.6)
       CFPropertyList (~> 2.2.6)
     faraday (0.9.2)
@@ -37,9 +38,15 @@ GEM
       rsync
     librarianp (0.6.3)
       thor (~> 0.15)
+    metaclass (0.0.4)
+    metadata-json-lint (0.0.11)
+      json
+      spdx-licenses (~> 1.0)
     minitest (5.8.4)
     mixlib-install (0.7.1)
     mixlib-shellout (2.2.6)
+    mocha (1.1.0)
+      metaclass (~> 0.0.1)
     multi_json (1.11.2)
     multipart-post (2.0.0)
     net-scp (1.2.1)
@@ -50,10 +57,37 @@ GEM
       facter (> 2.0, < 4)
       hiera (>= 2.0, < 4)
       json_pure
+    puppet-lint (1.1.0)
+    puppet-syntax (2.1.0)
+      rake
     puppet_forge (1.0.5)
       her (~> 0.6.8)
+    puppetlabs_spec_helper (1.1.1)
+      mocha
+      puppet-lint
+      puppet-syntax
+      rake
+      rspec-puppet
+    rake (11.1.1)
+    rspec (3.4.0)
+      rspec-core (~> 3.4.0)
+      rspec-expectations (~> 3.4.0)
+      rspec-mocks (~> 3.4.0)
+    rspec-core (3.4.4)
+      rspec-support (~> 3.4.0)
+    rspec-expectations (3.4.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.4.0)
+    rspec-mocks (3.4.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.4.0)
+    rspec-puppet (2.3.2)
+      rspec
+    rspec-support (3.4.1)
     rsync (1.0.9)
     safe_yaml (1.0.4)
+    spdx-licenses (1.0.0)
+      json
     test-kitchen (1.6.0)
       mixlib-install (~> 0.7)
       mixlib-shellout (>= 1.2, < 3.0)
@@ -70,10 +104,14 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  facter (>= 1.7.0)
   kitchen-puppet
   kitchen-vagrant
   librarian-puppet
+  metadata-json-lint
   puppet
+  puppet-lint (>= 1.0.0)
+  puppetlabs_spec_helper (>= 0.8.2)
   test-kitchen
 
 BUNDLED WITH

@@ -11,7 +11,7 @@ define newrelic::monitor::java (
 
   download_uncompress { "newrelic_${type}${version}.zip":
     distribution_name => "${source}/newrelic-${type}/${version}/newrelic_${type}${version}.zip",
-    dest_folder       => "${app_root}",
+    dest_folder       => $app_root,
     creates           => "${app_root}/newrelic/newrelic.jar",
     uncompress        => 'zip',
     user              => root,
@@ -19,19 +19,19 @@ define newrelic::monitor::java (
   }
 
   file_line { 'key':
-    ensure => present,
-    path   => "${app_root}/newrelic/newrelic.yml",
-    line   => "  license_key: '<%= ${key} %>'",
-    match  => "^  license_key: '<%= license_key %>'",
+    ensure  => present,
+    path    => "${app_root}/newrelic/newrelic.yml",
+    line    => "  license_key: '<%= ${key} %>'",
+    match   => "^  license_key: '<%= license_key %>'",
     require => Download_uncompress["newrelic_${type}${version}.zip"],
   }
 
   file_line { 'app_name':
-    ensure => present,
-    path   => "${app_root}/newrelic/newrelic.yml",
-    line   => "  app_name: ${app_name}",
-    match  => '  app_name:',
+    ensure   => present,
+    path     => "${app_root}/newrelic/newrelic.yml",
+    line     => "  app_name: ${app_name}",
+    match    => '  app_name:',
     multiple => true,
-    require => Download_uncompress["newrelic_${type}${version}.zip"],
+    require  => Download_uncompress["newrelic_${type}${version}.zip"],
   }
 }
