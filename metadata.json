@@ -1,12 +1,13 @@
 {
-  "name": "puppet-newrelic",
+  "name": "firebladee-newrelic",
   "version": "0.1.0",
-  "author": "puppet",
+  "author": "Fireblade",
   "summary": "Installs newrelic",
   "license": "Apache-2.0",
-  "source": "",
-  "project_page": null,
-  "issues_url": null,
+  "source": "https://github.com/Firebladee/newrelic",
+  "project_page": "https://github.com/Firebladee/newrelic/wiki",
+  "issues_url": "https://github.com/Firebladee/newrelic/issues",
+  "tags": ["newrelic", "php", "java", "nodejs", "monitoring"],
   "dependencies": [
     {
       "name":"puppetlabs-stdlib",
