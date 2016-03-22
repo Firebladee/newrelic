@@ -1,14 +1,8 @@
 ---
 classes:
   - ntp
-  - yumrepos
   - newrelic
-#  - rvm
   - nodejs
-
-rvm::system_rubies:
-  'ruby-1.9':
-    default_use: true
 
 ntp::servers:
   - '0.pool.ntp.org'

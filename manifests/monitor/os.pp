@@ -7,9 +7,14 @@ define newrelic::monitor::os (
     default: { notify{"os ${::osfamily} not yet supported":}}
   }
 
+  case $::osfamily {
+#    'Debian': { $require = Apt['newrelic']}
+    default: { $require = Yumrepo['newrelic']}
+  }
+
   package { $package_name:
     ensure  => $ensure,
-    require => Yumrepo['newrelic'],
+    require => $require,
   }
 
   file { '/etc/newrelic/nrsysmond.cfg':

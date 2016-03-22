@@ -3,10 +3,8 @@ FORGE
   specs:
     dsestero-download_uncompress (1.2.0)
       puppetlabs-stdlib (~> 4.0)
-    golja-gnupg (1.2.3)
-    maestrodev-rvm (1.13.1)
-      golja-gnupg (>= 1.2.0)
-      puppetlabs-stdlib (>= 4.2.0)
+    puppetlabs-apt (2.2.2)
+      puppetlabs-stdlib (< 5.0.0, >= 4.5.0)
     puppetlabs-nodejs (0.8.0)
       puppetlabs-stdlib (< 5.0.0, >= 2.2.1)
     puppetlabs-ntp (4.1.2)
@@ -15,18 +13,18 @@ FORGE
     treydock-gpg_key (0.0.3)
 
 GIT
-  remote: git@gitlab.et-scm.com:tio/rap-puppet-yumrepo.git
+  remote: git@github.com:Firebladee/yumrepos.git
   ref: master
-  sha: 199d426932bff5a3aae55d10d52b472e3dda0b9a
+  sha: bc5fc9a0995065d7aaffc8a10489d4f7f639853a
   specs:
     gbrown-yumrepos (0.0.1)
 
 DEPENDENCIES
   dsestero-download_uncompress (>= 0)
   gbrown-yumrepos (>= 0)
-  maestrodev-rvm (>= 0)
-  puppetlabs-nodejs (>= 0)
+  puppetlabs-apt (>= 0)
+  puppetlabs-nodejs (< 1.0.0, >= 0.8.0)
   puppetlabs-ntp (>= 0)
-  puppetlabs-stdlib (>= 1.0.0)
-  treydock-gpg_key (>= 0)
+  puppetlabs-stdlib (< 5.0.0, >= 4.1.0)
+  treydock-gpg_key (< 1.0.0, >= 0.0.3)
 

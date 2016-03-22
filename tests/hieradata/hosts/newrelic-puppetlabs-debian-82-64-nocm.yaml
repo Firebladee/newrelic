@@ -1,0 +1,11 @@
+classes:
+  - apt
+
+apt::sources:
+  'newrelic':
+    comment: 'Newrelic repo'
+    location: 'http://apt.newrelic.com/debian/'
+    repos: 'newrelic non-free'
+    key:
+      id: 548C16BF
+      server: 'subkeys.pgp.net'

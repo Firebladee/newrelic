@@ -7,6 +7,7 @@ begin
   SimpleCov.start do
     add_filter '/spec/'
   end
+  Coveralls.wear!
 rescue Exception => e
   warn "Coveralls disabled"
 end

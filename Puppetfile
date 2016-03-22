@@ -6,9 +6,7 @@ metadata
 
 mod 'puppetlabs/ntp'
 mod 'dsestero/download_uncompress'
-mod 'maestrodev/rvm'
-mod 'puppetlabs/nodejs'
-mod 'treydock/gpg_key'
+mod 'puppetlabs/apt'
 
 mod 'gbrown/yumrepos',
-  :git => 'git@gitlab.et-scm.com:tio/rap-puppet-yumrepo.git'
+  :git => 'git@github.com:Firebladee/yumrepos.git'
