@@ -15,15 +15,15 @@ yumrepos::repos:
     gpgkey: 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-NewRelic'
 
 newrelic::type:
-  'os':
-    key: '8fb13cf1873e95f60045afe67fc3a6aba9e563da'
-  'php':
-    key: '8fb13cf1873e95f60045afe67fc3a6aba9e563da'
-  'java':
-    key: '8fb13cf1873e95f60045afe67fc3a6aba9e563da'
-    app_root: '/tmp'
-    version: '2.10.0'
-    app_name: 'fred'
+#  'os':
+#    key: '8fb13cf1873e95f60045afe67fc3a6aba9e563da'
+#  'php':
+#    key: '8fb13cf1873e95f60045afe67fc3a6aba9e563da'
+#  'java':
+#    key: '8fb13cf1873e95f60045afe67fc3a6aba9e563da'
+#    app_root: '/tmp'
+#    version: '2.10.0'
+#    app_name: 'fred'
   'nodejs':
     key: '8fb13cf1873e95f60045afe67fc3a6aba9e563da'
     app_root: '/tmp'

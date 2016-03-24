@@ -1,4 +1,5 @@
 fixtures:
   forge_modules:
-    stdlib: "puppetlabs/stdlib"
-    nodejs: "puppetlabs/nodejs"
+    stdlib             : "puppetlabs/stdlib"
+    nodejs             : "puppetlabs/nodejs"
+    download_uncompress: "dsestero/download_uncompress"
