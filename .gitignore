@@ -4,3 +4,4 @@
 .*.swp
 spec/fixtures
 pkg/
+coverage/
