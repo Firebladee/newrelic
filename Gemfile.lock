@@ -130,6 +130,3 @@ DEPENDENCIES
   puppetlabs_spec_helper (>= 0.8.2)
   simplecov
   test-kitchen
-
-BUNDLED WITH
-   1.11.2
