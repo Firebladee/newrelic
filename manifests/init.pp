@@ -43,7 +43,7 @@
 # Copyright 2016 Your name here, unless otherwise noted.
 #
 class newrelic (
-  $os   = true,
+  $os   = 'true',
   $type = undef,
 ){
   validate_string($os)
