@@ -7,10 +7,11 @@ define newrelic::monitor::java (
   $key    = $key,
   $source = 'http://yum.newrelic.com/newrelic/java-agent/',
   $type   = 'agent',
+  $download_name = "${source}/newrelic-${type}/${version}/newrelic_java.zip"
 ){
 
   download_uncompress { "newrelic_${type}${version}.zip":
-    distribution_name => "${source}/newrelic-${type}/${version}/newrelic_${type}${version}.zip",
+    distribution_name => $download_name,
     dest_folder       => $app_root,
     creates           => "${app_root}/newrelic/newrelic.jar",
     uncompress        => 'zip',
@@ -21,7 +22,7 @@ define newrelic::monitor::java (
   file_line { 'key':
     ensure  => present,
     path    => "${app_root}/newrelic/newrelic.yml",
-    line    => "  license_key: '<%= ${key} %>'",
+    line    => "  license_key: '${key}'",
     match   => "^  license_key: '<%= license_key %>'",
     require => Download_uncompress["newrelic_${type}${version}.zip"],
   }

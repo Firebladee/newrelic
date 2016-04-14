@@ -43,9 +43,13 @@
 # Copyright 2016 Your name here, unless otherwise noted.
 #
 class newrelic (
-  $type,
+  $os   = true,
+  $type = undef,
 ){
+  validate_string($os)
   validate_hash($type)
 
-  create_resources(newrelic::monitor, $type)
+  if $type != undef {
+    create_resources(newrelic::monitor, $type)
+  }
 }

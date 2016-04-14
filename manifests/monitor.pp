@@ -1,17 +1,19 @@
 define newrelic::monitor (
-  $ensure     = present,
-  $key        = undef,
-  $version    = undef,
-  $app_root   = undef,
-  $source     = undef,
-  $type       = undef,
-  $app_name   = undef,
+  $ensure   = present,
+  $key      = undef,
+  $version  = undef,
+  $app_root = undef,
+  $source   = undef,
+  $type     = undef,
+  $app_name = undef,
+  $host_name = undef,
 ){
   case $name {
     os: {
       newrelic::monitor::os { $name:
-        ensure => $ensure,
-        key    => $key,
+        ensure   => $ensure,
+        key      => $key,
+        host_name => $host_name,
     }}
     php: {
       newrelic::monitor::php { $name:
