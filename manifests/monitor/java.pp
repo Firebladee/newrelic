@@ -7,7 +7,7 @@ define newrelic::monitor::java (
   $key    = $key,
   $source = 'http://yum.newrelic.com/newrelic/java-agent/',
   $type   = 'agent',
-  $download_name = "${source}/newrelic-${type}/${version}/newrelic_java.zip"
+  $download_name = "${source}/newrelic-${type}/${version}/newrelic-java.zip"
 ){
 
   download_uncompress { "newrelic_${type}${version}.zip":
