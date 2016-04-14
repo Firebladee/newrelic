@@ -11,7 +11,7 @@ define newrelic::monitor::java (
 ){
 
   download_uncompress { "newrelic_${type}${version}.zip":
-    distribution_name => "${source}/newrelic-${type}/${version}/newrelic_java.zip",
+    distribution_name => "${source}/newrelic-${type}/${version}/newrelic-java.zip",
     dest_folder       => $app_root,
     creates           => "${app_root}/newrelic/newrelic.jar",
     uncompress        => 'zip',
