@@ -1,7 +1,7 @@
-define newrelic::monitor::os (
-  $ensure    = $ensure,
-  $key       = $key,
-  $host_name = $host_name
+define newrelic::os (
+  $ensure    = present,
+  $key       = undef,
+  $host_name = $host_name,
 ){
   case $::osfamily {
     'RedHat', 'Debian': { $package_name = 'newrelic-sysmond'}

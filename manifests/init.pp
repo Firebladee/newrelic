@@ -43,13 +43,46 @@
 # Copyright 2016 Your name here, unless otherwise noted.
 #
 class newrelic (
-  $os   = 'true',
-  $type = undef,
+  $os     = undef,
+  $php    = undef,
+  $java   = undef,
+  $nodejs = undef,
+  $ruby   = undef,
+  $net    = undef,
+  $python = undef,
 ){
-  validate_string($os)
-  validate_hash($type)
+  if $os != undef {
+    validate_hash($os)
+    create_resources(newrelic::os, $os)
+  }
 
-  if $type != undef {
-    create_resources(newrelic::monitor, $type)
+  if $php != undef {
+    validate_hash($php)
+    create_resources(newrelic::php, $php)
+  }
+
+  if $java != undef {
+    validate_hash($java)
+    create_resources(newrelic::java, $java)
+  }
+
+  if $nodejs != undef {
+    validate_hash($nodejs)
+    create_resources(newrelic::nodejs, $nodejs)
+  }
+
+  if $ruby != undef {
+    validate_hash($ruby)
+    create_resources(newrelic::ruby, $ruby)
+  }
+
+  if $net != undef {
+    validate_hash($net)
+    create_resources(newrelic::net, $net)
+  }
+
+  if $python != undef {
+    validate_hash($python)
+    create_resources(newrelic::python, $python)
   }
 }

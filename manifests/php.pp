@@ -1,4 +1,4 @@
-define newrelic::monitor::php (
+define newrelic::php (
   $ensure = $ensure,
   $key    = $key,
 ){

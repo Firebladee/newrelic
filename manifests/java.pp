@@ -1,4 +1,4 @@
-define newrelic::monitor::java (
+define newrelic::java (
   $version,
   $app_root,
   $app_name,

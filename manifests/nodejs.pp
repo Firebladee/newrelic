@@ -1,4 +1,4 @@
-define newrelic::monitor::nodejs (
+define newrelic::nodejs (
   $ensure     = $ensure,
   $key        = $key,
   $app_root   = $app_root,
