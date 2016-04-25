@@ -50,10 +50,23 @@ class newrelic (
   $ruby   = undef,
   $net    = undef,
   $python = undef,
+  $global_key = undef,
 ){
+
+  if $global_key != undef {
+    $default = {
+      key => $global_key,
+    }
+  }
+  else {
+    $default = {
+      'default' => undef,
+    }
+  }
+
   if $os != undef {
     validate_hash($os)
-    create_resources(newrelic::os, $os)
+    create_resources(newrelic::os, $os, $default)
   }
 
   if $php != undef {

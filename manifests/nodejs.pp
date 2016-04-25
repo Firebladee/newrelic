@@ -1,8 +1,10 @@
 define newrelic::nodejs (
-  $ensure     = $ensure,
-  $key        = $key,
-  $app_root   = $app_root,
-  $app_name   = $app_name,
+  $key,
+  $app_root,
+  $app_name,
+
+  $ensure  = present,
+  $default = undef,
 ){
   package { 'newrelic':
     ensure   => $ensure,

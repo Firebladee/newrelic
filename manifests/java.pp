@@ -3,11 +3,12 @@ define newrelic::java (
   $app_root,
   $app_name,
 
-  $ensure = $ensure,
-  $key    = $key,
-  $source = 'http://yum.newrelic.com/newrelic/java-agent/',
-  $type   = 'agent',
-  $download_name = "${source}/newrelic-${type}/${version}/newrelic-java.zip"
+  $ensure        = present,
+  $key           = undef,
+  $source        = 'http://yum.newrelic.com/newrelic/java-agent/',
+  $type          = 'agent',
+  $download_name = "${source}/newrelic-${type}/${version}/newrelic-java.zip",
+  $default       = undef,
 ){
 
   download_uncompress { "newrelic_${type}${version}.zip":

@@ -1,7 +1,9 @@
 define newrelic::os (
+  $key,
+
   $ensure    = present,
-  $key       = undef,
   $host_name = $host_name,
+  $default   = undef,
 ){
   case $::osfamily {
     'RedHat', 'Debian': { $package_name = 'newrelic-sysmond'}

@@ -1,6 +1,8 @@
 define newrelic::php (
-  $ensure = $ensure,
-  $key    = $key,
+  $key,
+
+  $ensure  = present,
+  $default = undef,
 ){
   case $::osfamily {
     'RedHat', 'Debian': { $package_name = 'newrelic-php5'}
