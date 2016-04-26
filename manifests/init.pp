@@ -50,8 +50,14 @@ class newrelic (
   $ruby   = undef,
   $net    = undef,
   $python = undef,
-  $global_key = undef,
+
+  $global_key   = undef,
+  $repo_install = false
 ){
+
+  if $repo_install {
+    include newrelic::repo
+  }
 
   if $global_key != undef {
     $default = {
@@ -71,31 +77,31 @@ class newrelic (
 
   if $php != undef {
     validate_hash($php)
-    create_resources(newrelic::php, $php)
+    create_resources(newrelic::php, $php, $default)
   }
 
   if $java != undef {
     validate_hash($java)
-    create_resources(newrelic::java, $java)
+    create_resources(newrelic::java, $java, $default)
   }
 
   if $nodejs != undef {
     validate_hash($nodejs)
-    create_resources(newrelic::nodejs, $nodejs)
+    create_resources(newrelic::nodejs, $nodejs, $default)
   }
 
   if $ruby != undef {
     validate_hash($ruby)
-    create_resources(newrelic::ruby, $ruby)
+    create_resources(newrelic::ruby, $ruby, $default)
   }
 
   if $net != undef {
     validate_hash($net)
-    create_resources(newrelic::net, $net)
+    create_resources(newrelic::net, $net, $default)
   }
 
   if $python != undef {
     validate_hash($python)
-    create_resources(newrelic::python, $python)
+    create_resources(newrelic::python, $python, $default)
   }
 }

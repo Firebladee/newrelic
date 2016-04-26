@@ -15,6 +15,7 @@ yumrepos::repos:
     gpgkey: 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-NewRelic'
 
 newrelic::global_key: '8fb13cf1873e95f60045afe67fc3a6aba9e563da'
+newrelic::repo_install: true
 
 newrelic::os:
   'os':
