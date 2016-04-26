@@ -1,6 +1,6 @@
 {
   "name": "Firebladee-newrelic",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "Firebladee",
   "summary": "Installs newrelic",
   "license": "Apache-2.0",
@@ -20,6 +20,10 @@
     {
       "name":"treydock-gpg_key",
       "version_requirement": ">= 0.0.3 < 1.0.0"
+    },
+    {
+      "name":"dsestero/download_uncompress",
+      "version_requirement": ">= 1.2.0 < 2.0.0"
     }
   ],
   "data_provider": null,

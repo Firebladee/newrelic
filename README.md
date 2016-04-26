@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/Firebladee/newrelic.svg?branch=master)](https://travis-ci.org/Firebladee/newrelic)
 # newrelic
 
 #### Table of Contents
@@ -21,35 +22,63 @@ What can this modulle setup.
 * php
 * java
 
-## Setup
-
-### Setup Requirements
-
-This module is assuming that the newrelic yum repo is installed.  If not then
-see 'tests/hieradata/common.yaml' for example of how to set that up.
-
 ## Usage
 
-Using this module is nice and simple, create a hash and pass that to the module.
+### I want to monitor the os.
 For hiera
 ```puppet
-newrelic::type:
+newrelic::os:
   'os':
     key: 'insert key'
-  'php': 
+```
+
+### I need to add labels.
+```puppet
+newrelic::os:
+  'os':
     key: 'insert key'
+    labels:
+      - 'os:linux'
+      - 'environment:dev'
+```
+Labels can also be done as a string if there is only one.
+```puppet
+newrelic::os:
+  'os':
+    key: 'insert key'
+    labels: 'os:linux'
+```
+
+### I need to monitor a java app.
+```puppet
+newrelic::java:
   'java':
     key: 'insert key'
     app_root: '/tmp'
-    version: '2.10.0'
-    app_name: 'fred'
-  'nodejs':
-    key: 'insert key'
-    app_root: '/tmp'
+    version: '3.27.0'
     app_name: 'fred'
 ```
 
+### I am feed up repeating my key.
+Then you are in luck.  The global key variable will take car of that.
+'''Puppet
+newrelic::global_key: 'insert key'
+'''
+
+### I need the new relic repo installed.
+```puppet
+newrelic::repo_install: true
+```
+
 ### Parameters
+
+#### `global_key`
+
+This is used as the global key for the hash's.  Saves having to type the key in for each hash.
+
+#### `repo_install`
+
+This will add the repo to allow the newrelic packages to be installed.  Default value: false
 
 #### `ensure`
 
