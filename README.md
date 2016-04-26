@@ -61,9 +61,9 @@ newrelic::java:
 
 ### I am feed up repeating my key.
 Then you are in luck.  The global key variable will take car of that.
-'''Puppet
+```Puppet
 newrelic::global_key: 'insert key'
-'''
+```
 
 ### I need the new relic repo installed.
 ```puppet
