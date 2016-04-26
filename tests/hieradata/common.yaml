@@ -20,18 +20,19 @@ newrelic::repo_install: true
 newrelic::os:
   'os':
     ensure: present
-#    key: '8fb13cf1873e95f60045afe67fc3a6aba9e563da'
+    labels:
+      - 'os:linux'
+      - 'environment:dev'
 newrelic::php:
   'php':
+    ensure: present
     key: '8fb13cf1873e95f60045afe67fc3a6aba9e563da'
 newrelic::java:
   'java':
-    key: '8fb13cf1873e95f60045afe67fc3a6aba9e563da'
     app_root: '/tmp'
     version: '3.27.0'
     app_name: 'fred'
 newrelic::nodejs:
   'nodejs':
-    key: '8fb13cf1873e95f60045afe67fc3a6aba9e563da'
     app_root: '/tmp'
     app_name: 'fred'

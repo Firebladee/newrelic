@@ -4,6 +4,27 @@ define newrelic::os (
   $ensure    = present,
   $host_name = $host_name,
   $default   = undef,
+
+  $log_level = 'info',
+  $logfile   = '/var/log/newrelic/nrsysmond.log',
+
+  $collector_host     = '',
+  $hostname           = '',
+  $ignore_reclaimable = '',
+  $labels             = '',
+  $pidfile            = '',
+  $proxy              = '',
+  $ssl                = '',
+  $ssl_ca_bundle      = '',
+  $ssl_ca_path        = '',
+  $timeout            = '',
+  $disable_nfs        = '',
+  $disable_docker     = '',
+  $docker_connection  = '',
+  $docker_cert_path   = '',
+  $docker_cert        = '',
+  $docker_key         = '',
+  $docker_cacert      = '',
 ){
   case $::osfamily {
     'RedHat', 'Debian': { $package_name = 'newrelic-sysmond'}
@@ -30,8 +51,11 @@ define newrelic::os (
   }
 
   service { 'newrelic-sysmond':
-    ensure  => running,
-    enable  => true,
-    require => File['/etc/newrelic/nrsysmond.cfg']
+    ensure     => running,
+    enable     => true,
+    hasrestart => true,
+    hasstatus  => true,
+    require    => File['/etc/newrelic/nrsysmond.cfg'],
+    subscribe  => File['/etc/newrelic/nrsysmond.cfg'],
   }
 }

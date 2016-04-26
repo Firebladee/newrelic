@@ -4,17 +4,30 @@
 
 license_key=<%= @key %>
 
-loglevel=info
-logfile=/var/log/newrelic/nrsysmond.log
-
-#proxy=
-
-#ssl=false
-#ssl_ca_bundle=/path/to/your/bundle.crt
-#ssl_ca_path=/etc/ssl/certs
-
-#pidfile=/var/run/newrelic/nrsysmond.pid
-
-#collector_host=collector.newrelic.com
-
-#timeout=30
+loglevel=<%= @log_level %>
+logfile=<%= @logfile %>
+<% if !@collector_host.empty? %>collector_host=<%= @collector_host %><% end -%>
+<% if !@hostname.empty? %>hostname=<%= @hostname %><% end -%>
+<% if !@ignore_reclaimable.empty? %>ignore_reclaimable=<%= @ignore_reclaimable %><% end -%>
+<% if !@labels.empty? %><% if @labels.is_a?(Array) %>labels=<%= @labels.join(";") -%>;
+  <%- else -%>
+labels=<%= @labels %>
+  <%- end -%>
+<% end -%>
+<% if !@pidfile.empty? %>pidfile=<%= @pidfile %><% end -%>
+<% if !@proxy.empty? %>proxy=<%= @proxy %><% end -%>
+<% if !@ssl.empty? %>ssl=<%= @ssl %><% end -%>
+<% if !@ssl_ca_bundle.empty? %><% if @ssl_ca_bundle.is_a?(Array) %>ssl_ca_bundle=<%= @ssl_ca_bundle.join(",") -%>
+  <%- else -%>
+ssl_ca_bundle=<%= @ssl_ca_bundle %>
+  <%- end -%>
+<% end -%>
+<% if !@ssl_ca_path.empty? %>ssl_ca_path=<%= @ssl_ca_path %><% end -%>
+<% if !@timeout.empty? %>timeout=<%= @timeout %><% end -%>
+<% if !@disable_nfs.empty? %>disable_nfs=<%= @disable_nfs %><% end -%>
+<% if !@disable_docker.empty? %>disable_docker=<%= @disable_docker %><% end -%>
+<% if !@docker_connection.empty? %>docker_connection=<%= @docker_connection %><% end -%>
+<% if !@docker_cert_path.empty? %>docker_cert_path=<%= @docker_cert_path %><% end -%>
+<% if !@docker_cert.empty? %>docker_cert=<%= @docker_cert %><% end -%>
+<% if !@docker_key.empty? %>docker_key=<%= @docker_key %><% end -%>
+<% if !@docker_cacert.empty? %>docker_cacert=<%= @docker_cacert %><% end -%>
