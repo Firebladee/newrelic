@@ -1,6 +1,6 @@
 class newrelic::repo {
-  case $osfamily {
-    'RedHat'           : { 
+  case $::osfamily {
+    'RedHat'           : {
       yumrepo{ 'newrelic':
         ensure   => present,
         baseurl  => 'http://yum.newrelic.com/pub/newrelic/el5/$basearch',
