@@ -13,3 +13,4 @@ gem 'librarian-puppet'
 gem 'metadata-json-lint'
 gem 'simplecov'
 gem 'coveralls'
+gem 'rspec-puppet-facts', :require => false

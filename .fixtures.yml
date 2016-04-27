@@ -1,5 +1,6 @@
 fixtures:
   forge_modules:
-    stdlib             : "puppetlabs/stdlib"
-    nodejs             : "puppetlabs/nodejs"
-    download_uncompress: "dsestero/download_uncompress"
+    stdlib              : "puppetlabs/stdlib"
+    nodejs              : "puppetlabs/nodejs"
+    gpg_key             : "treydock/gpg_key"
+    download_uncompress : "dsestero/download_uncompress"
