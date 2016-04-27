@@ -5,7 +5,7 @@ define newrelic::java (
 
   $ensure        = present,
   $key           = undef,
-  $source        = 'http://yum.newrelic.com/newrelic/java-agent/',
+  $source        = 'http://yum.newrelic.com/newrelic/java-agent',
   $type          = 'agent',
   $download_name = "${source}/newrelic-${type}/${version}/newrelic-java.zip",
   $default       = undef,
