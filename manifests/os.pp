@@ -2,7 +2,6 @@ define newrelic::os (
   $key,
 
   $ensure    = present,
-  $host_name = $host_name,
   $default   = undef,
 
   $log_level = 'info',
