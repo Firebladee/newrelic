@@ -22,7 +22,7 @@ define newrelic::nodejs (
   file_line { "${app_root}_key":
     ensure  => $ensure,
     path    => "${app_root}/newrelic.js",
-    line    => "  license_key: '<%= ${key} %>'",
+    line    => "  license_key: '${key}'",
     match   => '^  license_key:',
     require => Exec["${app_root}_exec"],
   }
