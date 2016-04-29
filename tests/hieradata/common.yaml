@@ -32,6 +32,7 @@ newrelic::java:
     app_root: '/tmp'
     version: '3.27.0'
     app_name: 'fred'
+    user: 'newrelic'
 newrelic::nodejs:
   'nodejs':
     app_root: '/tmp'

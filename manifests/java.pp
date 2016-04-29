@@ -9,6 +9,8 @@ define newrelic::java (
   $type          = 'agent',
   $download_name = "${source}/newrelic-${type}/${version}/newrelic-java.zip",
   $default       = undef,
+  $user          = 'root',
+  $group         = 'root'
 ){
 
   download_uncompress { "newrelic_${type}${version}.zip":
@@ -16,8 +18,8 @@ define newrelic::java (
     dest_folder       => $app_root,
     creates           => "${app_root}/newrelic/newrelic.jar",
     uncompress        => 'zip',
-    user              => root,
-    group             => root,
+    user              => $user,
+    group             => $group,
   }
 
   file_line { 'key':
