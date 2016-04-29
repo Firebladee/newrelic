@@ -9,9 +9,9 @@ describe 'newrelic::os' do
 
       let(:title) {'os'}
       let(:params) {{
-          :key    => '8fb13cf1873e95f60045afe67fc3a6aba9e563da',
-          :ensure => 'present',
-        }}
+        :key    => '8fb13cf1873e95f60045afe67fc3a6aba9e563da',
+        :ensure => 'present',
+      }}
 
       it { is_expected.to have_resource_count(4)}
 

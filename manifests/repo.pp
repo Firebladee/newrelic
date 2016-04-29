@@ -9,6 +9,6 @@ class newrelic::repo {
       }
     }
 #    /^(Debian|Ubuntu)$/:
-
+    default: {}
   }
 }

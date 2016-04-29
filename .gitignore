@@ -5,3 +5,5 @@
 spec/fixtures
 pkg/
 coverage/
+Gemfile.lock
+.vagrant/
