@@ -1,10 +1,8 @@
 require 'beaker-rspec'
-require 'pry'
+require 'beaker/puppet_install_helper'
 
 # Install Puppet on all hosts
-hosts.each do |host|
-  on host, install_puppet
-end
+run_puppet_install_helper
 
 RSpec.configure do |c|
   module_root = File.expand_path(File.join(File.dirname(__FILE__), '..'))
@@ -13,9 +11,9 @@ RSpec.configure do |c|
 
   c.before :suite do
     # Install module to all hosts
+
     hosts.each do |host|
-      install_dev_puppet_module_on(host, :source => module_root, :module_name => 'newrelic',
-          :target_module_path => '/etc/puppet/modules')
+      install_dev_puppet_module_on(host, :source => module_root, :module_name => 'newrelic', :target_module_path => '/etc/puppet/modules')
       # Install dependencies
       on(host, puppet('module', 'install', 'puppetlabs-stdlib'))
       on(host, puppet('module', 'install', 'puppetlabs-nodejs'))

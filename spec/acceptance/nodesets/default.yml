@@ -1,10 +1,9 @@
 HOSTS:
-  centos-7-x64:
+  centos-66-x64:
     roles:
-      - agent
-      - default
-    platform: redhat-7-x86_64
+      - master
+    platform: el-6-x86_64
+    box: puppetlabs/centos-6.6-64-nocm
     hypervisor: vagrant
-    box: puppetlabs/centos-7.2-64-nocm
 CONFIG:
   type: foss
