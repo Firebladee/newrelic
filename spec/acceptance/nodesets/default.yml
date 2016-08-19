@@ -1,9 +1,25 @@
 HOSTS:
   centos-66-x64:
-    roles:
-      - master
     platform: el-6-x86_64
     box: puppetlabs/centos-6.6-64-nocm
     hypervisor: vagrant
+#  centos-7-x64:
+#    platform: el-7-x86_64
+#    box: puppetlabs/centos-7.0-64-nocm
+#    hypervisor: vagrant
+#  ubuntu-1404:
+#    platform: ubuntu-1404-amd64
+#    box: puppetlabs/ubuntu-14.04-64-nocm
+#    hypervisor: vagrant
+#  ubuntu-1604-x64:
+#    platform: ubuntu-1604-amd64
+#    box: puppetlabs/ubuntu-16.04-64-nocm
+#    hypervisor: vagrant
+#  debian-82-x64:
+#    roles:
+#      - agent
+#    platform: debian-8-amd64
+#    box: puppetlabs/debian-8.2-64-nocm
+#    hypervisor: vagrant
 CONFIG:
   type: foss

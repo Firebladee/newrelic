@@ -13,5 +13,4 @@ describe 'newrelic class' do
     end
   end
 
-#  it_behaves_like "a idempotent resource"
 end
