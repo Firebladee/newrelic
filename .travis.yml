@@ -9,7 +9,10 @@ matrix:
     env: PUPPET_VERSION=4.4
 sudo: false
 script:
+  - "rake lint"
+  - "rake validate"
   - "rake spec SPEC_OPTS='--format documentation'"
+  - "rake beaker"
 install:
   - bundle install
   - rspec-puppet-init
