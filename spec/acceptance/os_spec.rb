@@ -2,7 +2,7 @@ require 'spec_helper_acceptance'
 
 describe 'newrelic os' do
   context 'default parameters' do
-    it 'should work with errors' do
+    it 'should work with defaults' do
       pp = <<-EOS
         class { 'newrelic':
           os => { os => { key => '8fb13cf1873e95f60045afe67fc3a6aba9e563da' }},

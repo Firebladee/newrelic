@@ -30,9 +30,14 @@ define newrelic::os (
     default: { notify{"os ${::osfamily} not yet supported":}}
   }
 
-  case $::osfamily {
-#    'Debian': { $require = Apt['newrelic']}
-    default: { $require = Yumrepo['newrelic']}
+  if $::newrelic::repo_install {
+    case $::osfamily {
+#      'Debian': { $require = Apt['newrelic']}
+      default: { $require = Yumrepo['newrelic']}
+    }
+  }
+  else {
+    $require = undef
   }
 
   package { $package_name:
