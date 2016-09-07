@@ -15,7 +15,8 @@ matrix:
   - rvm: 2.3.1
     sudo: required
     services: docker
-    env: PUPPET_VERSION="4.6.2" BEAKER_set="centos-6-docker"
+#    env: PUPPET_VERSION="4.6.2" BEAKER_set="centos-6-docker"
+    env: PUPPET_INSTALL_TYPE= agent BEAKER_set="centos-6-docker"
     script:
       - rake beaker
   allow_failures:
@@ -28,3 +29,4 @@ script:
 install:
   - bundle install
   - rspec-puppet-init
+cache: bundler
