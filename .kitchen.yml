@@ -4,7 +4,7 @@ driver:
 
 provisioner:
   name: puppet_apply
-#  require_chef_for_busser: false
+  require_chef_for_busser: false
   puppet_debug: false
   puppet_verbose: false
   manifests_path: tests/manifests

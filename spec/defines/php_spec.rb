@@ -13,7 +13,7 @@ describe 'newrelic::php' do
           :ensure => 'present',
         }}
 
-      it { is_expected.to have_resource_count(4)}
+      it { is_expected.to have_resource_count(5)}
 
       it 'should generate valid content for newrelic-install' do
         content = catalogue.resource('file', '/usr/bin/newrelic-install').send(:parameters)[:content]
@@ -27,12 +27,6 @@ describe 'newrelic::php' do
 
       case facts[:osfamily]
       when 'RedHat'
-
-        it { is_expected.to contain_package('newrelic-php5').with(
-          :ensure  => 'present',
-          :require => 'Yumrepo[newrelic]',
-        )}
-
         it { is_expected.to contain_file('/usr/bin/newrelic-install').with(
           :ensure  => 'present',
           :mode    => '0755',

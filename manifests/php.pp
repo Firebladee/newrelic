@@ -1,22 +1,17 @@
 define newrelic::php (
   $key,
 
-  $ensure  = present,
-  $default = undef,
+  $ensure       = present,
+  $default      = undef,
+  $repo_install = $::newrelic::repo_install,
 ){
   case $::osfamily {
     'RedHat', 'Debian': { $package_name = 'newrelic-php5'}
     default: { notify{"os ${::osfamily} not yet supported":}}
   }
 
-  case $::osfamily {
-#    'Debian': { $require = Apt['newrelic']}
-    default: { $require = Yumrepo['newrelic']}
-  }
-
-  package { $package_name:
+  newrelic::install { $package_name:
     ensure  => $ensure,
-    require => Yumrepo['newrelic'],
   }
 
   file { '/usr/bin/newrelic-install':

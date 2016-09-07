@@ -1,11 +1,11 @@
 require 'spec_helper_acceptance'
 
-describe 'newrelic os' do
+describe 'newrelic php' do
   context 'default parameters' do
     it 'should fail with defaults' do
       pp = <<-EOS
         class { 'newrelic':
-          os => { os => { key => '8fb13cf1873e95f60045afe67fc3a6aba9e563da' }},
+          php => { beaker => { key => '8fb13cf1873e95f60045afe67fc3a6aba9e563da' }},
         }
       EOS
 
@@ -19,19 +19,19 @@ describe 'newrelic os' do
     it 'should work with repo => true' do
       pp = <<-EOS
         class { 'newrelic':
-          os           => { os => { key => '8fb13cf1873e95f60045afe67fc3a6aba9e563da' }},
+          php          => { beaker => { key => '8fb13cf1873e95f60045afe67fc3a6aba9e563da' }},
           repo_install => true,
         }
       EOS
 
       apply_manifest(pp, :catch_failures => true)
-      expect(apply_manifest(pp, :catch_failures => true).exit_code).to be_zero
+      expect(apply_manifest(pp, :catch_failures => true).exit_code).to eq 0
     end
 
-    describe package('newrelic-sysmond') do
+    describe package('newrelic-php5') do
       it { should be_installed }
     end
-    describe file('/etc/newrelic/nrsysmond.cfg') do
+    describe file('/usr/bin/newrelic-install') do
       it { should be_file }
       it { should exist }
     end

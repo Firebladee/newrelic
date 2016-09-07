@@ -52,7 +52,7 @@ class newrelic (
   $python = undef,
 
   $global_key   = undef,
-  $repo_install = false
+  $repo_install = false,
 ){
 
   if $repo_install {

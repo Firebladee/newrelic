@@ -1,8 +1,9 @@
 define newrelic::os (
   $key,
 
-  $ensure    = present,
-  $default   = undef,
+  $ensure       = present,
+  $default      = undef,
+  $repo_install = $::newrelic::repo_install,
 
   $log_level = 'info',
   $logfile   = '/var/log/newrelic/nrsysmond.log',
@@ -30,19 +31,8 @@ define newrelic::os (
     default: { notify{"os ${::osfamily} not yet supported":}}
   }
 
-  if $::newrelic::repo_install {
-    case $::osfamily {
-#      'Debian': { $require = Apt['newrelic']}
-      default: { $require = Yumrepo['newrelic']}
-    }
-  }
-  else {
-    $require = undef
-  }
-
-  package { $package_name:
-    ensure  => $ensure,
-    require => $require,
+  newrelic::install { $package_name:
+    ensure => $ensure,
   }
 
   file { '/etc/newrelic/nrsysmond.cfg':
