@@ -12,10 +12,12 @@ matrix:
     services: docker
     env: PUPPET_VERSION="3.8.7" BEAKER_set="centos-6-docker"
     script:
-      - rake lint
-      - rake validate
-      - rake spec 
+#      - rake lint
+#      - rake validate
+#      - rake spec 
       - rake beaker
+  - rvm: 2.3.1
+    env: PUPPET_VERSION="~> 4.0"    
   allow_failures:
     -env: PUPPET_VERSION="3.8.7" BEAKER_set="centos-6-docker"
 sudo: false
@@ -23,7 +25,6 @@ script:
   - "rake lint"
   - "rake validate"
   - "rake spec SPEC_OPTS='--format documentation'"
-#  - "rake beaker"
 install:
   - bundle install
   - rspec-puppet-init
