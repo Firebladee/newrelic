@@ -14,7 +14,13 @@ matrix:
   - rvm: 2.3.1
     sudo: required
     services: docker
-    env: PUPPET_INSTALL_TYPE= agent BEAKER_set="centos-6-docker"
+    env: PUPPET_INSTALL_TYPE=agent PUPPET_INSTALL_VERSION=1.6.1 BEAKER_set="centos-6-docker"
+    script:
+      - rake beaker
+  - rvm: 2.3.1
+    sudo: required
+    services: docker
+    env: PUPPET_INSTALL_TYPE=agent PUPPET_INSTALL_VERSION=1.6.1 BEAKER_set="centos-7-docker"
     script:
       - rake beaker
   allow_failures:

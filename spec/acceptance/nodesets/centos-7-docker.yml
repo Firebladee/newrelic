@@ -7,6 +7,6 @@ HOSTS:
     docker_cmd: '["/sbin/init"]'
     docker_image_commands:
       - 'yum install -y wget'
-      - 'cd /etc/puppet/modules/newrelic; rake spec'
+#      - 'cd /etc/puppet/modules/newrelic; rake spec'
 CONFIG:
   type: foss

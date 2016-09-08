@@ -24,6 +24,7 @@ RSpec.configure do |c|
       on(host, puppet('module', 'install', 'puppetlabs-nodejs'))
       on(host, puppet('module', 'install', 'treydock-gpg_key'))
       on(host, puppet('module', 'install', 'dsestero/download_uncompress'))
+      on(host, puppet('module', 'install', 'puppetlabs/apt'))
 
       install_package host, 'git'
 
