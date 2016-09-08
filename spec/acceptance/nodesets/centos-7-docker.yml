@@ -1,11 +1,12 @@
 HOSTS:
-  centos-6-x64:
-    platform: el-6-x86_64
+  centos-7-x64:
+    platform: el-7-x86_64
     hypervisor : docker
-    image: centos:6
+    image: centos:7
     docker_preserve_image: true
     docker_cmd: '["/sbin/init"]'
     docker_image_commands:
       - 'yum install -y wget'
+      - 'cd /etc/puppet/modules/newrelic; rake spec'
 CONFIG:
   type: foss
