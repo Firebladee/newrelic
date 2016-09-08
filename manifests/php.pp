@@ -3,7 +3,7 @@ define newrelic::php (
 
   $ensure       = present,
   $default      = undef,
-  $repo_install = $::newrelic::repo_install,
+  $repo_install = $newrelic::repo_install,
 ){
   case $::osfamily {
     'RedHat', 'Debian': { $package_name = 'newrelic-php5'}
