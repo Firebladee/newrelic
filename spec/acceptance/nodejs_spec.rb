@@ -8,7 +8,7 @@ describe 'newrelic nodejs' do
         class { 'newrelic':
           nodejs => {
             beaker => {
-              key => '8fb13cf1873e95f60045afe67fc3a6aba9e563da',
+              key => '6480d639145b23574cf21d70defb5de536a38b8a',
               app_root => '/tmp',
               app_name => 'nodejs',
             }

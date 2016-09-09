@@ -5,7 +5,7 @@ define newrelic::install (
 
   if $repo_install {
     case $::osfamily {
-#      'Debian': { $require = Apt['newrelic']}
+      'Debian': { $require = [Apt::Source['newrelic'], Class['apt::update']]}
       default: { $require = Yumrepo['newrelic']}
     }
   }

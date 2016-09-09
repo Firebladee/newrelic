@@ -7,7 +7,7 @@ describe 'newrelic java' do
         class { 'newrelic':
           java => {
             beaker => {
-              key => '8fb13cf1873e95f60045afe67fc3a6aba9e563da',
+              key => '6480d639145b23574cf21d70defb5de536a38b8a',
               version => '3.27.0',
               app_root => '/tmp',
               app_name => 'beaker',

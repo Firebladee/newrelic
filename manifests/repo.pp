@@ -8,7 +8,18 @@ class newrelic::repo {
         gpgcheck => 0,
       }
     }
-#    /^(Debian|Ubuntu)$/:
+    /^(Debian|Ubuntu)$/: {
+      include apt
+      apt::source { 'newrelic':
+        location => 'http://apt.newrelic.com/debian/',
+        repos    => 'non-free',
+        key      => {
+          id     => '548C16BF',
+          server => 'keyserver.ubuntu.com'
+        },
+        release  => 'newrelic',
+      }
+    }
     default: {}
   }
 }
