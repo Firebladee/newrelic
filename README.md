@@ -111,23 +111,11 @@ The type of java agent.  Default is `agent`.
 
 This is used by node.js to identify the application.  Default is `undef`.
 
-Here, include a complete list of your module's classes, types, providers,
-facts, along with the parameters for each. Users refer to this section (thus
-the name "Reference") to find specific details; most users don't read it per
-se.
-
 ## Limitations
 
-This is where you list OS compatibility, version compatibility, etc. If there
-are Known Issues, you might want to include them under their own heading here.
+For the Redhat family, this has been tested on Centos.  So we have a baisc assumption that this will work on Redhat.
 
 ## Development
 
-Since your module is awesome, other users will want to play with it. Let them
-know what the ground rules for contributing are.
-
-## Release Notes/Contributors/Etc. **Optional**
-
-If you aren't using changelog, put your release notes here (though you should
-consider using changelog). You can also add any additional sections you feel
-are necessary or important to include here. Please use the `## ` header.
+Just the standard, i.e. fork, make change add rspec/beaker tests and then push request.
+If you are not ofay with rspec and beaker then still make the push request and we will help you with that.
