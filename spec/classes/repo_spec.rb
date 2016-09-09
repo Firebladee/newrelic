@@ -7,18 +7,17 @@ describe 'newrelic::repo' do
         facts
       end
 
-      it { is_expected.to have_resource_count(1)}
-
       case facts[:osfamily]
       when 'RedHat'
-
+        it { is_expected.to have_resource_count(1)}
         it { is_expected.to contain_yumrepo('newrelic').with(
           :ensure   => 'present',
           :baseurl  => 'http://yum.newrelic.com/pub/newrelic/el5/$basearch',
           :enabled  => 'true',
           :gpgcheck => '0',
         )}
-
+      when 'Debian'
+        it { is_expected.to have_resource_count(13)}
       end
     end
   end

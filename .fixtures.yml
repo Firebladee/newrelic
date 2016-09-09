@@ -4,3 +4,4 @@ fixtures:
     nodejs              : "puppetlabs/nodejs"
     gpg_key             : "treydock/gpg_key"
     download_uncompress : "dsestero/download_uncompress"
+    apt                 : "puppetlabs/apt"
