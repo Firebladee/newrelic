@@ -1,9 +1,8 @@
 define newrelic::php (
   $key,
 
-  $ensure       = present,
-  $default      = undef,
-  $repo_install = $::newrelic::repo_install,
+  $ensure  = present,
+  $default = undef,
 ){
   case $::osfamily {
     'RedHat', 'Debian': { $package_name = 'newrelic-php5'}
@@ -25,6 +24,5 @@ define newrelic::php (
   exec { '/usr/bin/newrelic-install install':
     creates => '/usr/bin/newrelic-install',
     require => Package[$package_name],
-
   }
 }

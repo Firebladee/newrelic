@@ -1,0 +1,50 @@
+AllCops:
+  Exclude:
+    - 'spec/fixtures/**/*'
+    - '**/*.erb'
+    - 'pkg/**/*'
+
+Style/TrailingCommaInLiteral:
+  Enabled: false
+
+Style/SpaceInsideBlockBraces:
+  Enabled: false
+
+Style/MultilineBlockLayout:
+  Enabled: false
+
+Style/BlockDelimiters:
+  Enabled: false
+
+Metrics/LineLength:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+Style/BlockEndNewline:
+  Enabled: false
+
+Style/TrailingCommaInArguments:
+  Enabled: false
+
+Style/RegexpLiteral:
+  Enabled: false
+
+Style/LeadingCommentSpace:
+  Enabled: false
+
+Bundler/OrderedGems:
+  Enabled: false
+
+Style/ColonMethodCall:
+  Enabled: false
+
+RSpec/DescribeClass:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Enabled: false
+
+RSpec/RepeatedExample:
+  Enabled: false

@@ -2,7 +2,7 @@ require 'spec_helper_acceptance'
 
 describe 'newrelic java' do
   context 'default parameters' do
-    it 'should work with defaults' do
+    it 'work with defaults' do
       pp = <<-EOS
         class { 'newrelic':
           java => {
@@ -17,8 +17,8 @@ describe 'newrelic java' do
       EOS
 
       # Run it twice and test for idempotency
-      apply_manifest(pp, :catch_failures => true)
-      expect(apply_manifest(pp, :catch_failures => true).exit_code).to be_zero
+      apply_manifest(pp, catch_failures: true)
+      expect(apply_manifest(pp, catch_failures: true).exit_code).to be_zero
     end
   end
 end

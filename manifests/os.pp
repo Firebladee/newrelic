@@ -3,7 +3,6 @@ define newrelic::os (
 
   $ensure       = present,
   $default      = undef,
-  $repo_install = $::newrelic::repo_install,
 
   $log_level = 'info',
   $logfile   = '/var/log/newrelic/nrsysmond.log',

@@ -1,6 +1,6 @@
 define newrelic::install (
   $ensure       = present,
-  $repo_install = $::newrelic::repo_install,
+  $repo_install = ::newrelic::repo_install,
 ){
 
   if $repo_install {

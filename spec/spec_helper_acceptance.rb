@@ -2,7 +2,7 @@ require 'beaker-rspec'
 require 'beaker/puppet_install_helper'
 
 git_repos = [
-  { :mod => 'yumrepo', :repo => 'https://github.com/Firebladee/yumrepos.git' }
+  { mod: 'yumrepo', repo: 'https://github.com/Firebladee/yumrepos.git' }
 ]
 
 # Install Puppet on all hosts
@@ -14,9 +14,8 @@ RSpec.configure do |c|
   c.formatter = :documentation
 
   c.before :suite do
-
     # Install module to all hosts
-    puppet_module_install(:source => module_root, :module_name => 'newrelic' )
+    puppet_module_install(source: module_root, module_name: 'newrelic')
 
     hosts.each do |host|
       # Install dependencies
