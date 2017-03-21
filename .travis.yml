@@ -1,11 +1,11 @@
 matrix:
   fast_finish: true
   include:
-  - rvm: 2.0.0
+  - rvm: 2.1.0
     env: PUPPET_VERSION=3.8.7
 #  - rvm: 2.3.1 # works locally so needs more infestigation on why travis fails.
 #    env: PUPPET_VERSION=4.5.2
-  - rvm: '2.0.0'
+  - rvm: 2.1.0
     sudo: required
     services: docker
     env: PUPPET_VERSION="3.8.7" BEAKER_set="centos-6-docker"
