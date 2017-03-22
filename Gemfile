@@ -21,3 +21,4 @@ gem 'beaker-puppet_install_helper', require: false
 gem 'rubocop-rspec'
 gem 'parallel_tests'
 gem 'syck'
+gem 'safe_yaml', '~> 1.0.4'
