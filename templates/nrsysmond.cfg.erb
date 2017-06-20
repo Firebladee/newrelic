@@ -31,3 +31,5 @@ ssl_ca_bundle=<%= @ssl_ca_bundle %>
 <% if !@docker_cert.empty? %>docker_cert=<%= @docker_cert %><% end -%>
 <% if !@docker_key.empty? %>docker_key=<%= @docker_key %><% end -%>
 <% if !@docker_cacert.empty? %>docker_cacert=<%= @docker_cacert %><% end -%>
+<% if !@cgroup_root.empty? %>cgroup_root=<%= @cgroup_root %><% end -%>
+<% if !@cgroup_style.empty? %>cgroup_style=<%= @cgroup_style %><% end -%>
