@@ -25,6 +25,8 @@ define newrelic::os (
   $docker_cert        = '',
   $docker_key         = '',
   $docker_cacert      = '',
+  $cgroup_root        = '',
+  $cgroup_style       = '',
 ){
   case $::osfamily {
     'RedHat', 'Debian': { $package_name = 'newrelic-sysmond'}
