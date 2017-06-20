@@ -24,13 +24,14 @@ RSpec.configure do |c|
       on(host, puppet('module', 'install', 'treydock-gpg_key'))
       on(host, puppet('module', 'install', 'dsestero/download_uncompress'))
       on(host, puppet('module', 'install', 'puppetlabs/apt'))
+      on(host, puppet('module', 'install', 'gbrown/yumrepos'))
 
       install_package host, 'git'
 
-      git_repos.each do |g|
-        step "Installing puppet module \'#{g[:repo]}\'"
-        shell("git clone #{g[:repo]} #{default['puppetpath']}/modules/#{g[:mod]}")
-      end
+#      git_repos.each do |g|
+#        step "Installing puppet module \'#{g[:repo]}\'"
+#        shell("git clone #{g[:repo]} #{default['puppetpath']}/modules/#{g[:mod]}")
+#      end
       # Add more setup code as needed
     end
   end

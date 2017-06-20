@@ -14,7 +14,9 @@ describe 'newrelic::os' do
 
       it { is_expected.to have_resource_count(5)}
 
-      it { is_expected.to contain_package('newrelic-sysmond')}
+      it { is_expected.to contain_package('newrelic-sysmond').with(
+        repo_install: false,
+      )}
 
       it 'generate valid content for nrsysmond.cfg' do
         content = catalogue.resource('file', '/etc/newrelic/nrsysmond.cfg').send(:parameters)[:content]

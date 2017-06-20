@@ -1,6 +1,6 @@
 define newrelic::install (
   $ensure       = present,
-  $repo_install = ::newrelic::repo_install,
+  $repo_install = $::newrelic::repo_install,
 ){
 
   if $repo_install {
@@ -11,6 +11,7 @@ define newrelic::install (
   }
   else {
     $require = undef
+    notify{"undef repo_install = ${repo_install}":}
   }
 
   package { $name:

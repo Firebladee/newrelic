@@ -22,3 +22,9 @@ gem 'rubocop-rspec'
 gem 'parallel_tests'
 gem 'syck'
 gem 'safe_yaml', '~> 1.0.4'
+
+group :development do
+  gem 'guard'
+  gem 'guard-rspec'
+  gem 'guard-rake'
+end

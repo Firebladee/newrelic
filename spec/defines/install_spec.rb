@@ -9,17 +9,17 @@ describe 'newrelic::install' do
       let(:title) {'newrelic-sysmond'}
       let(:params) {{
         ensure: 'present',
-        repo_install: 'true',
+        repo_install: false,
       }}
 
-      it { is_expected.to have_resource_count(2)}
+      it { is_expected.to have_resource_count(3)}
 
       case facts[:osfamily]
       when 'RedHat'
 
         it { is_expected.to contain_package('newrelic-sysmond').with(
           ensure:  'present',
-          require: 'Yumrepo[newrelic]',
+          require: nil,
         )}
       end
     end
@@ -39,7 +39,7 @@ describe 'newrelic::install' do
         repo_install: false,
       }}
 
-      it { is_expected.to have_resource_count(2)}
+      it { is_expected.to have_resource_count(3)}
 
       case facts[:osfamily]
       when 'RedHat'
