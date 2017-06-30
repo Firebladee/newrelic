@@ -7,10 +7,14 @@ describe 'newrelic::os' do
         facts
       end
 
+      let :pre_condition do
+        'class { "newrelic": }'
+      end
+
       let(:title) {'os'}
       let(:params) {{
-        :key    => '8fb13cf1873e95f60045afe67fc3a6aba9e563da',
-        :ensure => 'present',
+        :key          => '8fb13cf1873e95f60045afe67fc3a6aba9e563da',
+        :ensure       => 'present',
         :repo_install => true,
       }}
 
@@ -52,10 +56,14 @@ describe 'newrelic::os' do
         facts
       end
 
+      let :pre_condition do
+        'class { "newrelic": }'
+      end
+
       let(:title) {'os'}
       let(:params) {{
-        :key    => '8fb13cf1873e95f60045afe67fc3a6aba9e563da',
-        :ensure => 'present',
+        :key          => '8fb13cf1873e95f60045afe67fc3a6aba9e563da',
+        :ensure       => 'present',
         :repo_install => false,
       }}
 
