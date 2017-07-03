@@ -4,17 +4,17 @@ matrix:
   - rvm: '2.3.1'
     sudo: required
     services: docker
-    env: PUPPET_VERSION="3.8.7" BEAKER_set="centos-6-docker"
+    env: PUPPET_VERSION="3.8.7" BEAKER_set="centos-6"
   - rvm: 2.3.1
     sudo: required
     services: docker
-    env: PUPPET_INSTALL_TYPE=agent PUPPET_INSTALL_VERSION=1.6.1 BEAKER_set="centos-6-docker"
+    env: PUPPET_INSTALL_TYPE=agent PUPPET_INSTALL_VERSION=1.6.1 BEAKER_set="centos-6"
   - rvm: 2.3.1
     sudo: required
     services: docker
-    env: PUPPET_INSTALL_TYPE=agent PUPPET_INSTALL_VERSION=1.6.1 BEAKER_set="centos-7-docker"
+    env: PUPPET_INSTALL_TYPE=agent PUPPET_INSTALL_VERSION=1.6.1 BEAKER_set="centos-7"
   allow_failures:
-    - env: PUPPET_VERSION="3.8.7" BEAKER_set="centos-6-docker"
+    - env: PUPPET_VERSION="3.8.7" BEAKER_set="centos-6"
 sudo: false
 script:
   - "rake lint"
