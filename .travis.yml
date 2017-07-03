@@ -24,4 +24,5 @@ script:
 install:
   - bundle install
   - rspec-puppet-init
+  - librarian-puppet install
 cache: bundler
